@@ -1,0 +1,46 @@
+1- Implemente a classe do diagrama abaixo utilizando o conceito de encapsulamento.
+
+ControleTelevisao
+
+- idControle: int
+- modelo: String
+- canalAtual: int
+- ligado: boolean
++ ligarDesligar(): boolean
++ avancarCanal(): int
++ retornarCanal(): int
++ irParaCanal(canal: int): int
+
+Atributos:
+• idControle: Número de identificação única do controle. Informado no cadastro do objeto.
+• modelo: Modelo do controle. Informado no cadastro do objeto.
+• canalAtual: Valor que determina em qual canal a televisão está sintonizada. Assumir 1 quando
+o controle for ligado e 0 quando o controle for desligado.
+• ligado: Determina o estado do controle: true (ligado) ou false (desligado). Inicializado com false.
+
+Métodos:
+• ligarDesligar(): Alterna o valor do atributo ligado entre true e false. Retorna o estado atual do
+atributo ligado.
+• avancarCanal(): Avança para o próximo canal, incrementado 1 ao atributo canalAtual até o
+limite de 5. A atingir o limite, voltar ao canal 1. Retornar o número do canal atual.
+• retornarCanal(): Retorna para o canal anterior, decrementado 1 ao atributo canalAtual até o
+limite de 1. A atingir o limite, ir para o canal 5. . Retornar o número do canal atual.
+• irParaCanal(): Altera o canal atual para o valor definido pelo parâmetro.
+Se o valor estiver entre os limites 1-5 o atributo canalAtual é atualizado e retorna o número do canal
+atual.
+Se o valor não estiver entre os limites 1-5 o atributo canalAtual não é atualizado e retorna -1.
+Quando desligado o controle só responde ao método ligarDesligar(). Para fins de verificação, a
+chamada aos demais métodos da regra de negócio deve retornar 0 se o controle estiver desligado.
+
+2 - Implemente uma aplicação para teste que instancie um objeto da classe ControleTelevisao via
+construtor e mostrar os dados do objeto instanciado.
+
+3 – Realizar teste para validar as seguintes operações:
+1. Ligar o controle.
+2. Avançar canal.
+3. Ir para o canal 7.
+4. Ir para o canal 1.
+5. Mostrar o canal atual.
+6. Retornar canal.
+7. Desligar o controle.
+8. Avançar canal.
