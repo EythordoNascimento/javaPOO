@@ -13,4 +13,4 @@ Aqui você encontrará exemplos que exploram os principais pilares da linguagem 
 
 ## 📁 Estrutura do Repositório
 
-Os diretórios estão organizados por tema ou projeto. Alguns deles são atividades que realizei durante a faculdade, revisitadas e aprimoradas com uma nova perspectiva. Outros são fruto de curiosidade e prática pessoal para aprofundar o domínio da linguagem.
+Os diretórios estão organizados por tema ou projeto. Alguns deles são atividades que realizei durante a faculdade, revisitadas e aprimoradas com uma nova perspectiva. Outros são fruto de curiosidade e prática pessoal para aprofundar o domínio da linguagem..
