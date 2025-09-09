@@ -1,6 +1,7 @@
 package controletelevisao;
 
 public class controle {
+
     // Atributos privados
     private int idControle;
     private String modelo;
@@ -24,21 +25,24 @@ public class controle {
 
     // Método para avançar canal
     public int avancarCanal() {
-        if (!ligado) return 0;
+        if (!ligado)
+            return 0;
         canalAtual = (canalAtual % 5) + 1;
         return canalAtual;
     }
 
     // Método para retornar canal
     public int retornarCanal() {
-        if (!ligado) return 0;
+        if (!ligado)
+            return 0;
         canalAtual = (canalAtual == 1) ? 5 : canalAtual - 1;
         return canalAtual;
     }
 
     // Método para ir para canal específico
     public int irParaCanal(int canal) {
-        if (!ligado) return 0;
+        if (!ligado)
+            return 0;
         if (canal >= 1 && canal <= 5) {
             canalAtual = canal;
             return canalAtual;
@@ -47,7 +51,6 @@ public class controle {
         }
     }
 
-    // Getters
     public int getIdControle() {
         return idControle;
     }
@@ -56,11 +59,11 @@ public class controle {
         return modelo;
     }
 
-    public int getCanalAtual() {   // 🔹 corrigido para retornar int
+    public int getCanalAtual() {
         return canalAtual;
     }
 
-    public boolean isLigado() {    // 🔹 adicionado para consultar estado
+    public boolean isLigado() {
         return ligado;
     }
 }
