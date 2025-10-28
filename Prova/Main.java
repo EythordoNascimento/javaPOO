@@ -1,61 +1,38 @@
-package Prova;
-
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando uma prova com nota máxima de 100
-        Prova prova = new Prova("Prova de Matemática", new Date(), "Matemática", 100);
+        Scanner entrada = new Scanner(System.in);
 
-        // Registrando a nota do aluno
-        prova.registrarNota(65);
+        // Instanciar duas provas
+        Prova prova1 = new Prova("Prova 1", new Date(), "Programação Orientada a Objetos", 10);
+        Prova prova2 = new Prova("Prova 2", new Date(), "Programação Orientada a Objetos", 10);
 
-        // Verificando se foi aprovado
-        if (prova.verificarAprovacao()) {
-            System.out.println("Aluno aprovado!");
+        // Receber duas notas
+        System.out.print("Digite a nota da Prova 1: ");
+        prova1.registrarNota(entrada.nextFloat());
+
+        System.out.print("Digite a nota da Prova 2: ");
+        prova2.registrarNota(entrada.nextFloat());
+
+        // Atribuir as notas recebidas
+          boolean aprovado1 = prova1.verificarAprovacao();
+          boolean aprovado2 = prova2.verificarAprovacao();
+
+        // Verificar o Perfil do aluno
+        String perfil;
+        if (aprovado1 && aprovado2) {
+            perfil = "Ótimo";
+        } else if (aprovado1 || aprovado2) {
+            perfil = "Regular";
         } else {
-            System.out.println("Aluno reprovado.");
+            perfil = "Ruim";
         }
 
-        // Exibindo dados da prova
-        System.out.println("Título: " + prova.getTitulo());
-        System.out.println("Disciplina: " + prova.getDisciplina());
-        System.out.println("Nota do aluno: " + prova.getNotaAluno());
-        System.out.println("Nota máxima: " + prova.getNotaMaxima());
+        // Exibir resultado
+        System.out.println("\nPerfil do aluno: " + perfil);
 
-        // Testes com diferentes notas
-        System.out.println("\n--- Teste com nota abaixo do mínimo ---");
-        prova.registrarNota(59); // abaixo de 60% de 100
-        System.out.println("Aprovado? " + prova.verificarAprovacao());
-
-        System.out.println("\n--- Teste com nota mínima ---");
-        prova.registrarNota(60); // exatamente 60%
-        System.out.println("Aprovado? " + prova.verificarAprovacao());
-
-        System.out.println("\n--- Teste com nota acima do mínimo ---");
-        prova.registrarNota(85); // acima de 60%
-        System.out.println("Aprovado? " + prova.verificarAprovacao());
-
-        // Alterando dados da prova
-        System.out.println("\n--- Alterando dados da prova ---");
-        prova.setDisciplina("Física");
-        prova.setNotaMaxima(80);
-        prova.setTitulo("Prova de Física");
-
-        System.out.println("Novo título: " + prova.getTitulo());
-        System.out.println("Nova disciplina: " + prova.getDisciplina());
-        System.out.println("Nova nota máxima: " + prova.getNotaMaxima());
-
-        // Teste de validação de nota (se você ativar no método registrarNota da classe Prova)
-        System.out.println("\n--- Teste de nota inválida ---");
-        float notaTeste = 200;
-        if (notaTeste < 0 || notaTeste > prova.getNotaMaxima()) {
-        System.out.println("Nota inválida! Deve estar entre 0 e " + prova.getNotaMaxima());
-        } else {
-        prova.registrarNota(notaTeste);
-        System.out.println("Nota registrada: " + prova.getNotaAluno());
-        System.out.println("Aprovado? " + prova.verificarAprovacao());
-}
+        entrada.close();
     }
 }
-
