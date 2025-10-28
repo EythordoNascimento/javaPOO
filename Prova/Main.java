@@ -48,6 +48,14 @@ public class Main {
 
         // Teste de validação de nota (se você ativar no método registrarNota da classe Prova)
         System.out.println("\n--- Teste de nota inválida ---");
-        prova.registrarNota(200); // fora do limite
+        float notaTeste = 200;
+        if (notaTeste < 0 || notaTeste > prova.getNotaMaxima()) {
+        System.out.println("Nota inválida! Deve estar entre 0 e " + prova.getNotaMaxima());
+        } else {
+        prova.registrarNota(notaTeste);
+        System.out.println("Nota registrada: " + prova.getNotaAluno());
+        System.out.println("Aprovado? " + prova.verificarAprovacao());
+}
     }
 }
+
